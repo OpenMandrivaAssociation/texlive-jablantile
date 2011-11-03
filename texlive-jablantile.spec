@@ -1,3 +1,9 @@
+# revision 16364
+# category Package
+# catalog-ctan /fonts/jablantile
+# catalog-date 2009-12-10 11:03:10 +0100
+# catalog-license pd
+# catalog-version undef
 Name:		texlive-jablantile
 Version:	20091210
 Release:	1
@@ -41,6 +47,7 @@ Exhibit.
 %doc %{_texmfdistdir}/doc/fonts/jablantile/README
 %doc %{_texmfdistdir}/doc/fonts/jablantile/dearjablan.tex
 %doc %{_texmfdistdir}/doc/fonts/jablantile/jablantile.pdf
+%doc %{_tlpkgobjdir}/*.tlpobj
 
 #-----------------------------------------------------------------------
 %prep
@@ -51,3 +58,5 @@ Exhibit.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
