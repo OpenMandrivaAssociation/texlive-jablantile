@@ -48,3 +48,17 @@ Exhibit.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts doc %{buildroot}%{_texmfdistdir}
+
+
+%changelog
+* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 20091210-2
++ Revision: 752891
+- Rebuild to reduce used resources
+
+* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 20091210-1
++ Revision: 718746
+- texlive-jablantile
+- texlive-jablantile
+- texlive-jablantile
+- texlive-jablantile
+
