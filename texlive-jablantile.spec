@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-jablantile
 Version:	20091210
-Release:	9
+Release:	10
 Summary:	Metafont version of tiles in the style of Slavik Jablan
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/jablantile
