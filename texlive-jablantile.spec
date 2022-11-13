@@ -1,18 +1,12 @@
-# revision 16364
-# category Package
-# catalog-ctan /fonts/jablantile
-# catalog-date 2009-12-10 11:03:10 +0100
-# catalog-license pd
-# catalog-version undef
 Name:		texlive-jablantile
-Version:	20190228
-Release:	2
+Version:	16364
+Release:	1
 Summary:	Metafont version of tiles in the style of Slavik Jablan
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/jablantile
 License:	PD
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/jablantile.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/jablantile.doc.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/jablantile.r%{version}.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/jablantile.doc.r%{version}.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -25,12 +19,12 @@ structure of the tiles, see (for example) Jablan's JMM 2006
 Exhibit.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
@@ -41,24 +35,10 @@ Exhibit.
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1
+%autosetup -p1 -c -a1
 
 %build
 
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar fonts doc %{buildroot}%{_texmfdistdir}
-
-
-%changelog
-* Wed Jan 04 2012 Paulo Andrade <pcpa@mandriva.com.br> 20091210-2
-+ Revision: 752891
-- Rebuild to reduce used resources
-
-* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 20091210-1
-+ Revision: 718746
-- texlive-jablantile
-- texlive-jablantile
-- texlive-jablantile
-- texlive-jablantile
-
