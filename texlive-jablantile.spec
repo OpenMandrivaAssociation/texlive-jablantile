@@ -1,6 +1,6 @@
 Name:		texlive-jablantile
 Version:	16364
-Release:	1
+Release:	2
 Summary:	Metafont version of tiles in the style of Slavik Jablan
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/fonts/jablantile
