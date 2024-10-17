@@ -3,7 +3,7 @@ Version:	16364
 Release:	2
 Summary:	Metafont version of tiles in the style of Slavik Jablan
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/fonts/jablantile
+URL:		https://www.ctan.org/tex-archive/fonts/jablantile
 License:	PD
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/jablantile.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/jablantile.doc.r%{version}.tar.xz
