@@ -1,44 +1,21 @@
-Name:		texlive-jablantile
-Version:	16364
-Release:	2
+%global tl_name jablantile
+%global tl_revision 16364
+
+Name:		texlive-%{tl_name}
+Version:	%{tl_revision}
+Release:	1
 Summary:	Metafont version of tiles in the style of Slavik Jablan
 Group:		Publishing
 URL:		https://www.ctan.org/tex-archive/fonts/jablantile
-License:	PD
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/jablantile.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/jablantile.doc.r%{version}.tar.xz
+License:	pd
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/jablantile.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/jablantile.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
-BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+BuildSystem:	texlive
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This is a small Metafont font to implement the modular tiles
-described by Slavik Jablan. For an outline of the theoretical
-structure of the tiles, see (for example) Jablan's JMM 2006
-Exhibit.
+This is a small Metafont font to implement the modular tiles described
+by Slavik Jablan. For an outline of the theoretical structure of the
+tiles, see (for example) Jablan's JMM 2006 Exhibit.
 
-%post
-%{_sbindir}/texlive.post
-
-%postun
-if [ $1 -eq 0 ]; then
-	%{_sbindir}/texlive.post
-fi
-
-#-----------------------------------------------------------------------
-%files
-%{_texmfdistdir}/fonts/source/public/jablantile/jablantile.mf
-%doc %{_texmfdistdir}/doc/fonts/jablantile/README
-%doc %{_texmfdistdir}/doc/fonts/jablantile/dearjablan.tex
-%doc %{_texmfdistdir}/doc/fonts/jablantile/jablantile.pdf
-
-#-----------------------------------------------------------------------
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-mkdir -p %{buildroot}%{_texmfdistdir}
-cp -fpar fonts doc %{buildroot}%{_texmfdistdir}
